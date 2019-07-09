@@ -15,6 +15,7 @@ class FormDetails extends Component {
           <div>Description</div>
           <div>Amount</div>
           <div>Total</div>
+          <div>Action</div>
         </div>
         {data.map(item => {
           return (

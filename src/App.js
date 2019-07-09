@@ -31,11 +31,16 @@ class App extends Component {
       formDetails: [...this.state.formDetails, formValues]
     });
   };
+
   render() {
     return (
       <div>
         <Navbar />
-        <Form addExpenseDetails={this.addExpenseDetails} />
+        <Form
+          addExpenseDetails={this.addExpenseDetails}
+          onClick={this.onClick}
+        />
+
         <FormDetails
           data={this.state.formDetails}
           key={this.state.formDetails.id}
