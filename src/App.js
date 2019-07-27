@@ -1,50 +1,30 @@
 import React, { Component } from "react";
-import Navbar from "./components/Navbar";
-import Form from "./components/Form";
-import FormDetails from "./components/FormDetails";
+import uuid from "uuid";
+
+import "./App.css";
+import FormInput from "./components/FormInput";
 
 class App extends Component {
   state = {
-    formDetails: [
+    expensesItem: [
       {
+        id: uuid(),
         date: "",
-        value: "",
+        category: "",
         description: "",
         amount: "",
-        total: null,
-        edit: false,
-        id: Math.random()
+        total: ""
       }
     ]
   };
 
-  addExpenseDetails = (date, value, description, amount, total) => {
-    let formValues = {
-      date,
-      value,
-      description,
-      amount,
-      total
-    };
-
-    this.setState({
-      formDetails: [...this.state.formDetails, formValues]
-    });
+  addFormInput = (date, category, description, amount) => {
+    console.log(date, category, description, amount);
   };
-
   render() {
     return (
       <div>
-        <Navbar />
-        <Form
-          addExpenseDetails={this.addExpenseDetails}
-          onClick={this.onClick}
-        />
-
-        <FormDetails
-          data={this.state.formDetails}
-          key={this.state.formDetails.id}
-        />
+        <FormInput addInput={this.addFormInput} />
       </div>
     );
   }

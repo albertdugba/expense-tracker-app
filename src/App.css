@@ -1,127 +1,37 @@
-.App {
-  text-align: center;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-}
-
-.navbar {
-  background: white;
-  padding: 0;
-  box-shadow: 0 0 8px rgb(17, 17, 17);
-}
-
-.logo {
-  color: teal;
-  font-size: 3rem;
-  margin-left: 20px;
-}
-
-/* Form */
-
 form {
-  max-width: 450px;
+  max-width: 500px;
   margin: auto;
-  margin-top: 2px;
-  width: 100%;
-  background: rgb(217, 224, 222);
-  padding: 1rem;
-  border-radius: 5px;
-}
-
-button {
-  background: rgb(76, 116, 116);
-  color: rgb(217, 224, 222);
-  outline: none;
-  border: none;
-  padding-top: 5px 0 5px;
-  width: 30%;
-  margin-top: 6px;
-  height: 35px;
-  border-radius: 3px;
-  font-weight: bolder;
-  text-transform: uppercase;
-}
-
-form input {
-  width: 100%;
-  border: none;
-  outline: none;
-  border: 1.6px solid lightgrey;
-  border-radius: 5px;
-  padding-left: 5px;
-}
-
-label {
-  margin-top: 4px;
-  font-weight: bolder;
-  text-transform: uppercase;
-}
-
-label,
-textarea {
-  font-size: 0.8rem;
-  letter-spacing: 1px;
-}
-
-textarea {
-  padding: 10px;
-  line-height: 1.5;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  box-shadow: 1px 1px 1px #999;
-  outline: none;
-  width: 100%;
 }
 
 label {
   display: block;
-  margin-bottom: 10px;
+  font-weight: bold;
+  margin: 0;
 }
 
-/* DisplayFormDetails Component */
-.expense-list-group {
-  display: grid;
-  grid-template-columns: repeat(6, 200px);
-  font-weight: bolder;
+form input,
+button {
+  width: 100%;
+}
+
+form input {
+  outline: none;
+  border: none;
+  border: 1.2px solid grey;
+}
+
+button {
+  outline: none;
+  border: none;
+  border: 1.4px solid blue;
+  font-weight: bold;
   text-transform: uppercase;
-  padding: 0 3rem;
-  margin-top: 7px;
-  grid-gap: 0.3rem;
+  transition-duration: 0.5s;
+  padding: 0.3rem;
 }
 
-.list-group {
-  display: grid;
-  grid-template-columns: repeat(6, 200px);
-  padding: 0 3rem;
-  margin-top: 6px;
-  grid-gap: 0.3rem;
-}
-
-.list-group > div {
-  border-bottom: 2px solid teal;
-}
-
-.total {
-  text-align: center;
-}
-
-.icons {
-  padding: 0 3px;
-  text-align: left;
-}
-
-.edit {
-  color: teal;
-  cursor: pointer;
-  margin: 0 8px;
-}
-
-.delete {
-  color: red;
-  cursor: pointer;
-  margin: 0 8px;
+button:hover {
+  transition: ease-in;
+  background: rgb(6, 18, 73);
+  color: #fff;
 }
