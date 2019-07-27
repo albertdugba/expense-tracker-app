@@ -9,7 +9,6 @@ class FormInput extends Component {
   };
 
   handleChange = event => {
-    // console.log(event);
     let target = event.target.name;
     let value = event.target.value;
     this.setState({ [target]: value });
