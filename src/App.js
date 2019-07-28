@@ -28,14 +28,22 @@ class App extends Component {
       amount
     };
     this.setState({
-      expensesItem: [...this.state, newExpenses]
+      expensesItem: [...this.state.expensesItem, newExpenses]
     });
+  };
+
+  handleDelete = id => {
+    const expensesItem = this.state.expensesItem.filter(item => item.id !== id);
+    this.setState({ expensesItem });
   };
   render() {
     return (
       <div>
         <FormInput addInput={this.addFormInput} />
-        <FormItem expenses={this.state.expensesItem} />
+        <FormItem
+          expenses={this.state.expensesItem}
+          handleDelete={this.handleDelete}
+        />
       </div>
     );
   }

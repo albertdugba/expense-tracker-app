@@ -35,3 +35,45 @@ button:hover {
   background: rgb(6, 18, 73);
   color: #fff;
 }
+
+/* Tables */
+
+.grid-table {
+  display: grid;
+  grid-template-columns: repeat(5, 200px);
+  background: rgb(17, 71, 102);
+  color: red;
+  padding: 0.5rem;
+  border-radius: 20px;
+  max-width: 900px;
+  margin: auto;
+  font-weight: bold;
+  overflow-x: hidden;
+}
+
+.expense-list-item {
+  display: grid;
+  grid-template-columns: repeat(5, 200px);
+  padding: 0.5rem;
+  border-radius: 20px;
+  max-width: 900px;
+  margin: auto;
+  overflow-x: hidden;
+}
+
+.expense-list-item > div {
+  border-bottom: 1px dotted red;
+}
+
+/*Icons */
+
+.del {
+  margin-left: 1rem;
+  color: red;
+  cursor: pointer;
+}
+
+.edit {
+  color: teal;
+  cursor: pointer;
+}

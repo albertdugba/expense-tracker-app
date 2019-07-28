@@ -29,7 +29,7 @@ class FormInput extends Component {
           <label htmlFor="Date">Date</label>
           <input
             type="date"
-            name="Date"
+            name="date"
             value={this.state.date}
             onChange={this.handleChange}
           />
@@ -37,14 +37,14 @@ class FormInput extends Component {
           <select
             value={this.state.category}
             onChange={this.handleChange}
-            name="Category"
+            name="category"
           >
             <optgroup label="Utilities">
               <option value="Light">Light</option>
               <option value="Rent">Rent</option>
               <option value="Water">Water</option>
               <option value="Gas">Gas</option>
-              <option value="Tel">Telephone</option>
+              <option value="Telephone">Telephone</option>
             </optgroup>
 
             <optgroup label="Maintenance">
