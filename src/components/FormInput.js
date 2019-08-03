@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 
+import "../App.css";
+
 class FormInput extends Component {
   state = {
     date: "",
     category: "Water",
-    amount: "",
+    amount: [],
     description: ""
   };
 
@@ -20,11 +22,13 @@ class FormInput extends Component {
 
     const { date, category, amount, description } = this.state;
     this.props.addInput(date, category, amount, description);
+    this.setState({ date: "", category: "", amount: "", description: "" });
   };
 
   render() {
     return (
-      <div>
+      <div className="mt-4">
+        <h2 className="text-center animated-heading">Add Expense Details</h2>
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="Date">Date</label>
           <input

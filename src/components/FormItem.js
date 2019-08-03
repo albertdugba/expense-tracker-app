@@ -5,7 +5,7 @@ import FormDetails from "./FormDetails";
 
 class FormItem extends Component {
   render() {
-    const { expenses } = this.props;
+    const { expenses, total } = this.props;
     return (
       <div className="container mt-3">
         <div>
@@ -22,8 +22,10 @@ class FormItem extends Component {
               expense={expense}
               key={expense.id}
               handleDelete={this.props.handleDelete}
+              handleEdit={this.props.handleEdit}
             />
           ))}
+          <strong>Total:{total}</strong>
         </div>
       </div>
     );

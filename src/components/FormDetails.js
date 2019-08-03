@@ -6,6 +6,7 @@ import "../App.css";
 
 const FormDetails = props => {
   const { date, category, amount, description, id } = props.expense;
+
   return (
     <div>
       <div className="expense-list-item">
@@ -14,7 +15,7 @@ const FormDetails = props => {
         <div>{amount}</div>
         <div>{description}</div>
         <div className="icons">
-          <FaPen className="edit" />
+          <FaPen className="edit" onClick={() => props.handleEdit(id)} />
           <FaTrashAlt className="del" onClick={() => props.handleDelete(id)} />
         </div>
       </div>
