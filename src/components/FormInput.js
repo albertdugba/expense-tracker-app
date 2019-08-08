@@ -14,22 +14,14 @@ class FormInput extends Component {
     let target = event.target.name;
     let value = event.target.value;
     this.setState({ [target]: value });
-    console.log(value);
-  };
-
-  handleSubmit = event => {
-    event.preventDefault();
-
-    const { date, category, amount, description } = this.state;
-    this.props.addInput(date, category, amount, description);
-    this.setState({ date: "", category: "", amount: "", description: "" });
   };
 
   render() {
+    const { ...data } = this.state;
     return (
       <div className="mt-4">
         <h2 className="text-center animated-heading">Add Expense Details</h2>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={e => this.props.submit(e, data)}>
           <label htmlFor="Date">Date</label>
           <input
             type="date"
@@ -80,7 +72,9 @@ class FormInput extends Component {
             value={this.state.description}
             onChange={this.handleChange}
           />
-          <button className="mt-3">Add</button>
+          <button className="mt-3" type="submit">
+            Add
+          </button>
         </form>
       </div>
     );

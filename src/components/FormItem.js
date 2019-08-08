@@ -6,9 +6,10 @@ import FormDetails from "./FormDetails";
 class FormItem extends Component {
   render() {
     const { expenses, total } = this.props;
+    // console.log(total);
     return (
       <div className="container mt-3">
-        <div>
+        <div className="table-container">
           <div className="grid-table">
             <div>Date</div>
             <div>Category</div>
@@ -17,11 +18,11 @@ class FormItem extends Component {
             <div>Action</div>
           </div>
 
-          {expenses.map(expense => (
+          {expenses.map((expense, i) => (
             <FormDetails
               expense={expense}
-              key={expense.id}
-              handleDelete={this.props.handleDelete}
+              key={i}
+              handleDelete={e => this.props.handleDelete(e, i)}
               handleEdit={this.props.handleEdit}
             />
           ))}

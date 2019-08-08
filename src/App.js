@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+
 import uuid from "uuid";
+import "bootstrap/dist/css/bootstrap.css";
 
 import "./App.css";
 import FormInput from "./components/FormInput";
@@ -14,31 +16,49 @@ class App extends Component {
         date: "",
         category: "",
         description: "",
-        amount: [],
-        total: null,
+        amount: 0,
         editExpense: false
       }
-    ]
+    ],
+    total: 0
   };
 
-  addFormInput = (date, category, description, amount, total) => {
-    // let sum = amount.reduce((a, b) => a + b, 0);
-
-    const newExpenses = {
-      id: uuid(),
-      date,
-      category,
-      description,
-      amount,
-      total
-    };
-    this.setState({
-      expensesItem: [...this.state.expensesItem, newExpenses]
-    });
+  componentDidMount = () => {
+    // console.log("updated", this.state);
+    const amounts = this.state.expensesItem.map(item => Number(item.amount));
+    const total = amounts.reduce((prev, next) => prev + next);
+    this.setState({ total });
+    // return this.setState({ total });
   };
 
-  handleDelete = id => {
-    const expensesItem = this.state.expensesItem.filter(item => item.id !== id);
+  // addFormInput = ({ date, category, description, amount, total }) => {
+  //   console.log(date);
+  //   const newExpenses = {
+  //     id: uuid(),
+  //     date,
+  //     category,
+  //     description,
+  //     amount,
+  //     total: sum
+  //   };
+  //   console.log(newExpenses);
+  //   return this.setState({
+  //     expensesItem: [...this.state.expensesItem, newExpenses]
+  //   });
+  // };
+
+  handleSubmit = (event, data) => {
+    event.preventDefault();
+    const newState = [...this.state.expensesItem, data];
+    const amounts = newState.map(item => Number(item.amount));
+    const total = amounts.reduce((prev, next) => prev + next);
+    this.setState({ expensesItem: newState, total });
+    // console.log(newState);
+  };
+
+  handleDelete = (e, id) => {
+    // console.log(id);
+    const expensesItem = this.state.expensesItem.filter((item, i) => i !== id);
     this.setState({ expensesItem });
   };
 
@@ -51,15 +71,21 @@ class App extends Component {
     });
   };
   render() {
+    // console.log(this.state);
+    const { id } = this.state.expensesItem;
     return (
       <div>
         <Header />
-        <FormInput addInput={this.addFormInput} />
+        <FormInput
+          // addFormInput={this.addFormInput}
+          submit={this.handleSubmit}
+        />
         <FormItem
-          total={this.state.expensesItem.total}
+          key={id}
           expenses={this.state.expensesItem}
           handleDelete={this.handleDelete}
           handleEdit={this.handleEdit}
+          total={this.state.total}
         />
       </div>
     );
