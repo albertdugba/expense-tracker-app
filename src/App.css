@@ -1,151 +1,151 @@
-/* Navbar */
-.nav-container {
-  color: rgb(17, 71, 102);
-  box-shadow: 0 0 10px 0 rgb(17, 71, 102);
+@import url("https://fonts.googleapis.com/css?family=Spartan&display=swap");
+
+:root {
+  --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
-.navBar {
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f7f7f7;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Spartan";
 }
 
-.ul {
-  margin-top: 10px;
+.container {
+  margin: 30px auto;
+  width: 350px;
 }
 
-.logo {
-  font-size: 3rem;
-}
-
-a {
-  text-decoration: none;
-}
-ul {
-  display: flex;
-}
-
-li {
-  list-style: none;
-  font-weight: bolder;
-  margin: 0 5px;
-  align-items: center;
-}
-
-form {
-  max-width: 500px;
-  margin: auto;
-}
-
-label {
-  display: block;
-  font-weight: bold;
+h1 {
+  letter-spacing: 1px;
   margin: 0;
 }
 
-form input,
-button {
-  width: 100%;
-  border-radius: 8px;
+h3 {
+  border-bottom: 1px solid #bbb;
+  padding-bottom: 10px;
+  margin: 40px 0 10px;
 }
 
-form input {
-  outline: none;
-  border: none;
-  border: 1.2px solid grey;
-}
-
-button {
-  outline: none;
-  border: none;
-  border: 1.4px solid rgb(17, 71, 102);
-  font-weight: bold;
+h4 {
+  margin: 0;
   text-transform: uppercase;
-  transition-duration: 0.5s;
-  padding: 0.3rem;
 }
 
-button:hover {
-  transition: ease-in;
-  background: rgb(17, 71, 102);
+.inc-exp-container {
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.inc-exp-container > div {
+  flex: 1;
+  text-align: center;
+}
+
+.inc-exp-container > div:first-of-type {
+  border-right: 1px solid #dedede;
+}
+
+.money {
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin: 5px 0;
+}
+
+.money.plus {
+  color: #2ecc71;
+}
+
+.money.minus {
+  color: #c0392b;
+}
+
+label {
+  display: inline-block;
+  margin: 10px 0;
+}
+
+input[type="text"],
+input[type="number"] {
+  border: 1px solid #dedede;
+  border-radius: 2px;
+  display: block;
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+}
+
+.btn {
+  cursor: pointer;
+  background-color: #9c88ff;
+  box-shadow: var(--box-shadow);
   color: #fff;
+  border: 0;
+  display: block;
+  font-size: 16px;
+  margin: 10px 0 30px;
+  padding: 10px;
+  width: 100%;
 }
 
-/* Tables */
-
-.grid-table {
-  display: grid;
-  grid-template-columns: repeat(5, 200px);
-  background: rgb(17, 71, 102);
-  color: white;
-  padding: 0.5rem;
-  border-radius: 20px;
-  max-width: 900px;
-  margin: auto;
-  font-weight: bold;
-  overflow-x: hidden;
+.btn:focus,
+.delete-btn:focus {
+  outline: 0;
 }
 
-.expense-list-item {
-  display: grid;
-  grid-template-columns: repeat(5, 200px);
-  padding: 0.5rem;
-  border-radius: 20px;
-  max-width: 900px;
-  font-weight: bold;
-  margin: auto;
-  overflow-x: hidden;
+.list {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 40px;
 }
 
-.expense-list-item > div {
-  border-bottom: 1px dotted rgb(17, 71, 102);
+.list li {
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 10px;
+  margin: 10px 0;
 }
 
-/*Icons */
+.list li.plus {
+  border-right: 5px solid #2ecc71;
+}
 
-.del {
-  margin-left: 1rem;
-  color: red;
+.list li.minus {
+  border-right: 5px solid #c0392b;
+}
+
+.delete-btn {
   cursor: pointer;
+  background-color: #e74c3c;
+  border: 0;
+  color: #fff;
+  font-size: 20px;
+  line-height: 20px;
+  padding: 2px 5px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-100%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.edit {
-  color: teal;
-  cursor: pointer;
-}
-
-/* Animation */
-
-h2 {
-  transition-duration: 0.8s;
-}
-.animated-heading:hover {
-  color: rgb(17, 71, 102);
-  transform: skewX(2deg) skewY(2deg);
-}
-
-/* Media Queries */
-@media (max-width: 769px) {
-  form {
-    max-width: 450px;
-    margin: auto;
-    padding: 1rem;
-  }
-
-  .grid-table {
-    display: block;
-  }
-
-  .expense-list-item {
-    display: block;
-  }
-
-  .table-container {
-    display: flex;
-  }
-
-  .two-colum-grid {
-    color: green;
-    display: none;
-  }
+.list li:hover .delete-btn {
+  opacity: 1;
 }
