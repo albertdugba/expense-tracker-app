@@ -1,5 +1,5 @@
 import React from "react";
-import { FaRegMoneyBillAlt } from "react-icons/fa";
+// import { FaRegMoneyBillAlt } from "react-icons/fa";
 
 import "../App.css";
 
