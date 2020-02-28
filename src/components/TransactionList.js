@@ -9,9 +9,11 @@ const TransactionList = () => {
     <>
       <h3>History</h3>
       <ul id="list" className="list">
-        {transactions.map(transaction => (
-          <Transaction transaction={transaction} key={transaction.id} />
-        ))}
+        {transactions.length === 0
+          ? `You have ${transactions.length} transactions`
+          : transactions.map(transaction => (
+              <Transaction transaction={transaction} key={transaction.id} />
+            ))}
       </ul>
     </>
   );
