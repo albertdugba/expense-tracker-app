@@ -1,10 +1,9 @@
-import React from "react";
-// import { FaRegMoneyBillAlt } from "react-icons/fa";
+import React from 'react'
 
-import "../App.css";
-
-const Header = () => {
-  return <h2>Expense Tracker</h2>;
-};
-
-export default Header;
+export const Header = () => {
+  return (
+    <h2>
+      Expense Tracker
+    </h2>
+  )
+}
